@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-md navbar-dark  mb-3" style="background-color: #8A2BE2;">
-  <a class="navbar-brand" href="<?php echo URLROOT ?>"><?php echo APPNAME;?></a>
+<nav class="navbar navbar-expand-md navbar-dark  mb-3" >
+  <a class="navbar-brand"  href="<?php echo URLROOT ?>"><?php echo APPNAME;?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
