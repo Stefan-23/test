@@ -1,16 +1,26 @@
 <?php
 
-    class Pages{
+    class Pages extends Controller{
         public function __construct(){
-            echo 'Constructor loaded';
+            
         }
 
         public function index(){
+            
+            $data = [
+                'title' => 'Calendar App',
+                'description' => 'Welcome to Calendar schedule app.',
+            ];
 
+            
+
+            $this->view('pages/index', $data);
         }
-        public function about($id){
-            echo '<br> This is about';
-            echo $id;
+
+
+        public function about(){
+            
+            
         }
     }
 
