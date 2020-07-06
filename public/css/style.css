@@ -1,4 +1,14 @@
 body{
     background-image: url('../images/background.jpg');
-   
+    background-attachment: fixed;
+    background-size: cover;
+}
+body.schedule{
+    background-image: url('../images/planner.jpg');
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.navbar-dark .navbar-nav .nav-link {
+    
 }

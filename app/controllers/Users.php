@@ -45,10 +45,23 @@
         }
 
         // Validate Password
+        $uppercase = preg_match('@[A-Z]@', $data['password']);
+        $lowercase = preg_match('@[a-z]@', $data['password']);
+        $number    = preg_match('@[0-9]@', $data['password']);
+        $special   = preg_match('/[^a-zA-Z\d]/', $data['password']);;
+        
         if(empty($data['password'])){
-          $data['password_err'] = 'Pleae enter password';
-        } elseif(strlen($data['password']) < 6){
-          $data['password_err'] = 'Password must be at least 6 characters';
+          $data['password_err'] = 'Please enter password';
+        } elseif(strlen($data['password']) < 8){
+          $data['password_err'] = 'Password must be at least 8 characters';
+        }elseif(!$uppercase){
+          $data['password_err'] = 'Password must have at least one uppercase character';
+        }
+        elseif(!$lowercase){
+          $data['password_err'] = 'Password must have at least one uppercase character';
+        }
+        elseif(!$special){
+          $data['password_err'] = 'Password must have at least one special character';
         }
 
         // Validate Confirm Password
@@ -169,7 +182,7 @@
       $_SESSION['user_id'] = $user->id;
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
-      redirect('pages/index');
+      redirect('schedules/index');
     }
 
     public function logout(){
