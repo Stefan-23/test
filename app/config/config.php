@@ -1,16 +1,16 @@
 <?php
-    //DB Params
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASS', '');
-    define('DB_NAME', 'calendar');
-    
+//DB Params
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'calendar');
 
-    //App Root
-    define('APPROOT', dirname(dirname(__FILE__)));
 
-    //URL Root
-    define('URLROOT', 'http://localhost/test/');
+//App Root
+define('APPROOT', dirname(dirname(__FILE__)));
 
-    //APP name
-    define('APPNAME', 'Calendar');
+//URL Root
+define('URLROOT', 'http://localhost/test/');
+
+//APP name
+define('APPNAME', 'Calendar');

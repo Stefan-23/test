@@ -1,39 +1,69 @@
-body{
+body {
     background-image: url('../images/background.jpg');
     background-attachment: fixed;
     background-size: cover;
+    opacity: 0.9;
 }
-body.schedule{
+
+body.schedule {
     background-image: url('../images/planner.jpg');
     background-position: top;
     background-attachment: fixed;
     background-size: cover;
+    opacity: 0.9;
 }
-.navbar-dark .navbar-nav .nav-link {
-    
-}
+
+.navbar-dark .navbar-nav .nav-link {}
+
 .container2 {
     font-family: 'Noto Sans', sans-serif;
-    margin-top: 80px;
-    background-color: white;
-    border-radius: 3%;
+    background-color: whitesmoke;
+    opacity: 0.8;
 }
-h3 {
-    margin-bottom: 30px;
-}
+
+h3 {}
+
 th {
     height: 30px;
     text-align: center;
 }
+
 td {
     height: 100px;
 }
+
 .today {
-    background: orange;
+    background-color: orange;
 }
-th:nth-of-type(1), td:nth-of-type(1) {
+
+th:nth-of-type(1),
+td:nth-of-type(1) {
     color: red;
 }
-th:nth-of-type(7), td:nth-of-type(7) {
+
+th:nth-of-type(7),
+td:nth-of-type(7) {
     color: blue;
+}
+
+#grow td {
+    transition: 1s ease;
+}
+
+#grow td:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+    background-color: rgb(29, 214, 214);
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+#delete {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
