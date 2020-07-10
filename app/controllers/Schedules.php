@@ -16,7 +16,6 @@ class Schedules extends Controller
     //index function
     public function index()
     {
-
         $schedules = $this->scheduleModel->getSchedules();
 
         $data = [
@@ -55,12 +54,12 @@ class Schedules extends Controller
             //Validate data
             if (empty($data['url'])) {
                 $data['err_title'] = 'Please enter date';
-              } else {
+            } else {
                 // Check date
                 if ($this->scheduleModel->findScheduleByName($data['url'])) {
-                  $data['err_title'] = 'Date is already scheduled';
+                    $data['err_title'] = 'Date is already scheduled';
                 }
-              }
+            }
             if (empty($data['body'])) {
                 $data['err_body'] = 'Please enter body text';
             }
@@ -74,8 +73,6 @@ class Schedules extends Controller
                 $this->view('schedules/add', $data);
             }
         }
-        
-
         $this->view('schedules/add', $data);
     }
 
@@ -119,20 +116,6 @@ class Schedules extends Controller
             $this->view('schedules/edit', $data);
         }
     }
-
-
-    //show fucntion
-    public function show($id)
-    {
-        $schedule = $this->scheduleModel->getScheduleById($id);
-        $user = $this->userModel->getUserById($schedule->user_id);
-        $data = [
-            'schedule' => $schedule,
-            'user' => $user,
-        ];
-        $this->view('schedules/show', $data);
-    }
-
     //delete function
     public function delete($id)
     {
@@ -149,6 +132,7 @@ class Schedules extends Controller
             redirect('schedules/index');
         }
     }
+
     public function calendar()
     {
         // Set your timezone
@@ -188,8 +172,6 @@ class Schedules extends Controller
 
         // 0:Sun 1:Mon 2:Tue ...
         $str = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestamp)));
-        //$str = date('w', $timestamp);
-
 
         // Create Calendar!!
         $weeks = array();
@@ -216,10 +198,7 @@ class Schedules extends Controller
                     // Add empty cell
                     $week .= str_repeat('<td></td>', 6 - ($str % 7));
                 }
-
                 $weeks[] = '<tr>' . $week . '</tr>';
-
-
                 // Prepare for new week
                 $week = '';
             }

@@ -1,8 +1,6 @@
 <?php
 
 //PDO Database class
-
-
 class Database
 {
     private $host = DB_HOST;
@@ -17,13 +15,11 @@ class Database
     public function __construct()
     {
         //Set DSN
-
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         $options = array(
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION     //There are 3 types of pdo errmode(silent,warning,exception)
         );
-
         //PDO instance with try and catch
         try {
 
@@ -39,7 +35,6 @@ class Database
     {
         $this->stmt = $this->dbhandler->prepare($sql);
     }
-
     public function bind($param, $value, $type = null)
     {
         if (is_null($type)) {
@@ -73,16 +68,13 @@ class Database
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
-
     //Fetch single row
     public function single()
     {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
-
     //Row count
-
     public function rowCount()
     {
         return $this->stmt->rowCount();

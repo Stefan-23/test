@@ -14,6 +14,9 @@
           <a class="nav-link" href="<?php echo URLROOT ?>schedules/index">Schedules</a>
         </li>
       <?php endif; ?>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo URLROOT ?>pages/motivation">Motivation</a>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <?php if (isset($_SESSION['user_id'])) :  ?>

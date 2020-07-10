@@ -11,6 +11,7 @@
     </div>
   </div>
   <?php foreach ($data['schedules'] as $schedule) : ?>
+    <?php if($_SESSION['user_id'] == $schedule->user_id) : ?>
     <div class="card card-body mb-3">
       <h4 class="card-title"><?php echo $schedule->title; ?> </h4>
       <p class="card-text"><?php echo $schedule->body; ?></p>
@@ -19,7 +20,7 @@
       </div>
       <a href="<?php echo URLROOT; ?>schedules/edit/<?php echo $schedule->scheduleId; ?>" class="btn btn-dark">Edit-Remove</a>
     </div>
-
+  <?php endif; ?>
   <?php endforeach;?>
 </body>
 

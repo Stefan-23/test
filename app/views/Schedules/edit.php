@@ -8,7 +8,7 @@
     <form action="<?php echo URLROOT; ?> schedules/edit/<?php echo $data['id']; ?>" method="POST">
         <div class="form-group">
             <label for="title"> Title: </label>
-            <input type="text" name="title" class="form-control form control-lg <?php echo (!empty($data['err_title'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['url']; ?>">
+            <input type="text" name="title" class="form-control form control-lg <?php echo (!empty($data['err_title'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['url']; ?>" readonly>
             <span class="invalid-feedback"> <?php echo $data['err_title']; ?> </span>
         </div>
         <div class="form-group">
